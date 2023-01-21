@@ -1,0 +1,49 @@
+﻿@model Todo
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 style="background-color: white; text-align: center; padding: 1.5% 0;">Bazadakı məlumatların düzəlişi pəncərəsi</h1>
+
+<div class="d-flex justify-content-center">
+    <h4 style="background-color: white; text-align: center; padding: 1.5% 0; width: 50%;">Todo</h4>
+</div>
+
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-4" style="background-color: white; padding: 1.5%;">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ResponsiblePeople" class="control-label"></label>
+                <input asp-for="ResponsiblePeople" class="form-control" />
+                <span asp-validation-for="ResponsiblePeople" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsCompleted" /> @Html.DisplayNameFor(model => model.IsCompleted)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,47 @@
+﻿@model Todo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="create">Bazaya yeni məlumatlar əlavə etmək</h1>
+
+<div class="d-flex justify-content-center align-items-center">
+    <h4 class="text-center" style="background-color: white; width: 25%; padding: 1.5% 0;">Todo</h4>
+</div>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-4" style="background-color: white; padding: 1.5%;">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ResponsiblePeople" class="control-label"></label>
+                <input asp-for="ResponsiblePeople" class="form-control" />
+                <span asp-validation-for="ResponsiblePeople" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsCompleted" /> @Html.DisplayNameFor(model => model.IsCompleted)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,63 @@
+﻿@model Todo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-center" style="background-color: white; padding: 1.5% 0;">Ayrıntılı məlumat</h1>
+
+<div class="d-flex justify-content-center">
+    <h4 style="width: 25%; background-color:white; text-align: center; padding: 1.5% 0;">Todo</h4>
+</div>
+
+<div class="d-flex flex-column align-items-center">
+
+    <hr />
+    <dl class="row justify-content-center align-items-center;" style="background-color: white; width: 60%; padding: 1.5%;">
+        <dt class="col-6">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class="col-6">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class="col-6">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-6">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-6">
+            @Html.DisplayNameFor(model => model.ResponsiblePeople)
+        </dt>
+        <dd class="col-6">
+            @Html.DisplayFor(model => model.ResponsiblePeople)
+        </dd>
+        <dt class="col-6">
+            @Html.DisplayNameFor(model => model.IsCompleted)
+        </dt>
+        <dd class="col-6">
+            @Html.DisplayFor(model => model.IsCompleted)
+        </dd>
+        <dt class="col-6">
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+        <dd class="col-6">
+            @Model.CreatedDate.ToString("dd.MM.yyyy HH:mm:ss")
+        </dd>
+        @if (Model.DeletedDate != null)
+        {
+            <dt class="col-6">
+                @Html.DisplayNameFor(model => model.DeletedDate)
+            </dt>
+            <dd class="col-6">
+                @Model.DeletedDate?.ToString("dd.MM.yyyy HH:mm:ss")
+            </dd>
+        }
+    </dl>
+
+    <div class="text-center" style="background-color: white; padding: 1.5%;">
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+

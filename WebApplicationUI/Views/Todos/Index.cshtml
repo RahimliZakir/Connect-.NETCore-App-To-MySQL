@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Todo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center ish">İş və mütəxəssislər Bazası</h1>
+
+<p>
+    <a asp-action="Create" class="add" data-toggle="tooltip" data-placement="right" title="Yeni məlumat əlavə et">
+        <i class="fas fa-plus-square"></i>
+    </a>
+</p>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+
+        <div class="col-4 mb-3">
+            <div class="card" style="width: 22rem;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">@item.Title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">@item.Description</h6>
+                    <p class="card-text">@item.ResponsiblePeople</p>
+                    <input asp-for="@item.IsCompleted" />
+                    <p>@item.CreatedDate.ToString("dd.MM.yyyy HH:mm:ss")</p>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="card-link">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="card-link">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="ml-3">Delete</a>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>

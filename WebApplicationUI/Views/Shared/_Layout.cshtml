@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src="https://kit.fontawesome.com/3077fe3d43.js" crossorigin="anonymous"></script>
+    <link href="~/lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url(https://cdn.theatlantic.com/thumbor/-SUxmb8pq_6-mv3_VRWKHpUWzsI=/0x12:2090x1188/720x405/media/img/2017/09/DIS_Biz_Useem/original.jpg);
+            height: 100vh;
+            background-attachment: fixed;
+        }
+
+        .ish {
+            background-color: white;
+            padding: 2.5%;
+        }
+
+        .add {
+            display: inline-block;
+            color: orangered;
+            font-size: 2.4rem;
+            background-color: white;
+            border-radius: 50%;
+            width: 7.5%;
+            text-align: center;
+            transition: 0.5s;
+        }
+
+            .add:hover {
+                color: yellow;
+                transition: 0.5s;
+            }
+
+        .create {
+            text-align: center;
+            background-color: white;
+            padding: 1.5%;
+        }
+
+        .col-6 {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+
+</body>
+</html>
